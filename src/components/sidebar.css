@@ -85,7 +85,7 @@
   }
   
   .menu-gap {
-    margin-top: 30px;
+    margin-top: 50px;
   }
   
   .menu-item img {
@@ -103,18 +103,17 @@
   
   .main-content {
     flex: 1;
-    padding: 32px;
     height: 100vh;
     overflow-y: auto;
     transition: margin-left 0.3s ease;
   }
   
   .main-content.open {
-    margin-left: 256px;
+    margin-left: 230px;
   }
   
   .main-content.closed {
-    margin-left: 80px;
+    margin-left: 90px;
   }
   
   hr.separator {

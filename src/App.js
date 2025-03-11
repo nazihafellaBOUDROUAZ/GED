@@ -3,6 +3,7 @@ import SignIn from "./components/SignIn";
 import Welcome from "./components/Welcome";
 import Dashboard from "./components/Dashboard"
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import "./App.css"
 
 function App() {
   const route = createBrowserRouter([
