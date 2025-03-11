@@ -1,58 +1,52 @@
-import React from "react";
-import * as Components from './Components';
+import "./signin.css";
+import React, { useState } from "react";
 
 function SignIn() {
-    const [signIn, toggle] = React.useState(true);
-     return(
-         <Components.Container>
-             <Components.SignUpContainer signinIn={signIn}>
-                 <Components.Form>
-                     <Components.Title>Sign in en tant que Utilisateur</Components.Title>
-                     <Components.Input type='email' placeholder='Email' />
-                     <Components.Input type='password' placeholder='Password' />
-                     <Components.Anchor href='#'>Mot de passe oublié ?</Components.Anchor>
-                     <Components.Button>Sign In</Components.Button>
-                 </Components.Form>
-             </Components.SignUpContainer>
+    const [signIn, setSignIn] = useState(true);
 
-             <Components.SignInContainer signinIn={signIn}>
-                  <Components.Form>
-                      <Components.Title>Sign in en tant que Admin</Components.Title>
-                      <Components.Input type='email' placeholder='Email' />
-                      <Components.Input type='password' placeholder='Password' />
-                      <Components.Anchor href='#'>Mot de passe oublié ?</Components.Anchor>
-                      <Components.Button>Sigin In</Components.Button>
-                  </Components.Form>
-             </Components.SignInContainer>
+    return (
+        <div className="ggg">
+        <div className={`container ${signIn ? "" : "sign-in-mode"}`}>
+            <div className="sign-up-container form-container">
+                <form className="Form">
+                    <h1 className="Title">Sign in en tant que Utilisateur</h1>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <button>Sign In</button>
+                </form>
+            </div>
 
-             <Components.OverlayContainer signinIn={signIn}>
-                 <Components.Overlay signinIn={signIn}>
+            <div className="sign-in-container form-container">
+                <form className="Form">
+                    <h1 className="Title">Sign in en tant que Admin</h1>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <button>Sign In</button>
+                </form>
+            </div>
 
-                 <Components.LeftOverlayPanel signinIn={signIn}>
-                     <Components.Title1>Welcome Back!</Components.Title1>
-                     <Components.Paragraph>
-                        Accédez à vos documents en toute sécurité et simplicité.
-                     </Components.Paragraph>
-                     <Components.GhostButton onClick={() => toggle(true)}>
-                         Admin
-                     </Components.GhostButton>
-                     </Components.LeftOverlayPanel>
+            <div className="overlay-container">
+                <div className="overlay">
+                    <div className="overlay-left overlay-panel">
+                        <h1 className="Title1">Welcome Back!</h1>
+                        <p>Accédez à vos documents en toute sécurité et simplicité.</p>
+                        <button className="ghost" onClick={() => setSignIn(true)}>
+                            Admin
+                        </button>
+                    </div>
 
-                     <Components.RightOverlayPanel signinIn={signIn}>
-                       <Components.Title1>Welcome!</Components.Title1>
-                       <Components.Paragraph>
-                       Accédez à vos documents en toute sécurité et simplicité.
-                       </Components.Paragraph>
-                           <Components.GhostButton onClick={() => toggle(false)}>
-                               Utilisateur
-                           </Components.GhostButton> 
-                     </Components.RightOverlayPanel>
- 
-                 </Components.Overlay>
-             </Components.OverlayContainer>
-
-         </Components.Container>
-     )
+                    <div className="overlay-right overlay-panel">
+                        <h1 className="Title1">Welcome!</h1>
+                        <p>Accédez à vos documents en toute sécurité et simplicité.</p>
+                        <button className="ghost" onClick={() => setSignIn(false)}>
+                            Utilisateur
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    );
 }
 
 export default SignIn;

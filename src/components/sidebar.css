@@ -1,0 +1,123 @@
+/* Sidebar.css */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 20px;
+    padding-top: 0;
+    background-color: #a8e6cf; /* dark-purple */
+    transition: width 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .sidebar.open {
+    width: 230px; /* 64 tailwind */
+  }
+  
+  .sidebar.closed {
+    width: 90px; /* 20 tailwind */
+  }
+  
+  .toggle-btn {
+    position: absolute;
+    top: 47px;
+    right: px;
+    width: 28px;
+    background-color: #a8e6cf;
+    border-radius: 50%;
+    border: 2px solid #a8e6cf;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-btn.rotate {
+    transform: rotate(180deg);
+  }
+  
+  .sidebar-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: -10px;
+  }
+  
+  .sidebar-logo {
+    width: 128px;
+    transition: transform 0.4s ease;
+  }
+  
+  .sidebar-logo.rotate {
+    transform: rotate(360deg);
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: bolde;
+    color: #009577;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .menu-item:hover {
+    background-color: #009577;
+    color: white;
+  }
+  
+  .menu-item.active {
+    background-color: #009577;
+    color: white;
+  }
+  
+  .menu-gap {
+    margin-top: 30px;
+  }
+  
+  .menu-item img {
+    width: 24px;
+  }
+  
+  .menu-text {
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+  }
+  
+  .menu-text.hidden {
+    display: none;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 32px;
+    height: 100vh;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content.open {
+    margin-left: 256px;
+  }
+  
+  .main-content.closed {
+    margin-left: 80px;
+  }
+  
+  hr.separator {
+    border-color: #4b5563; /* gray-600 */
+  }
+  
